@@ -1,21 +1,37 @@
 #include "queue.h"
 
-void Queue::init(list<string> queue, int max_size){
-    _queue = queue;
-    _max_size = max_size;
-    _count = 0;
-    _top_pointer = NULL;
+
+struct node{
+    string content;
+    struct node *next;
+
+};
 
 
+Queue::Queue(){
+    _queue_size = 0;
+    _init_pointer = NULL;
+    _final_pointer = NULL;
 }
 
-void Queue::add_item(string item){
+
+void Queue::insert(string content){
+
+    struct node new_node;
+    new_node.content = content;
+    new_node.next = NULL;
+
+
+    if(_init_pointer == NULL){
+        _init_pointer = &new_node;
+        _final_pointer = &new_node;
+
+    }
+    else{
+        (*_final_pointer).next = &new_node;
+        _final_pointer = &new_node;
+    };
+
+    Queue::set_size();
 
 };
-
-
-string Queue::remove_item(){
-
-};
-
-

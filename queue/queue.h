@@ -1,25 +1,30 @@
 #ifndef QUEUE
 #define QUEUE
 
-#include <list>
 #include <string>
 
 using namespace std;
 
 class Queue{
-    public:
-        void init(list<string> queue, int queue_size);
-        void add_item(string item);
-        string remove_item();
 
-        bool is_empty() const {return _count == 0 ? 1 : 0;}
-        bool is_full() const {return _count == _max_size ? 1 : 0;};
+    public:
+        void insert(string content);
+        //struct node remove();
+        //struct node const peek();
+
+        size_t const get_size() {return _queue_size;}
+        void set_size() {_queue_size++;}
+        struct node *_init_pointer;
+        struct node *_final_pointer;
+        //struct node * const get_init_pointer() {return _init_pointer;}
+        //struct node * const get_final_pointer() {return _final_pointer;}
+
+        Queue();
 
     private:
-        list<string> _queue;
-        int _max_size;
-        string* _top_pointer;
-        size_t _count;
+        //struct node *_init_pointer;
+        //struct node *_final_pointer;
+        size_t _queue_size;
 };
 
-#endif;
+#endif
