@@ -17,19 +17,20 @@ Queue::Queue(){
 
 void Queue::insert(string content){
 
-    struct node new_node;
-    new_node.content = content;
-    new_node.next = NULL;
+    struct node *new_node = (struct node *) malloc(sizeof(struct node));
+
+    (*new_node).content = content;
+    (*new_node).next = NULL;
 
 
     if(_init_pointer == NULL){
-        _init_pointer = &new_node;
-        _final_pointer = &new_node;
+        _init_pointer = &*new_node;
+        _final_pointer = &*new_node;
 
     }
     else{
-        (*_final_pointer).next = &new_node;
-        _final_pointer = &new_node;
+        (*_final_pointer).next = &*new_node;
+        _final_pointer = &*new_node;
     };
 
     Queue::set_size();
