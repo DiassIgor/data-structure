@@ -22,11 +22,12 @@ int main(){
     cout << fila._final_pointer << "\n";
     assert(fila.get_size() == 3);
 
-    cout << "Teste \n";
+    fila.remove();
+    cout << fila._init_pointer << "\n";
+    cout << fila._final_pointer << "\n";
+    assert(fila.get_size() == 2);
 
-
-    
-   
+    cout << "Teste \n";   
    
     return 0;
 };
