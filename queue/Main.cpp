@@ -4,30 +4,31 @@
 
 using namespace std;
 
+void show_queue(Queue fila){
+    cout << "First Item: " << fila._init_pointer->content << "\n";
+    cout << "Last Item: " << fila._final_pointer->content << "\n";
+    cout << "------------------------------------------------- \n";
+};
+
+
 int main(){
 
     Queue fila;
     fila.insert("Item 1");
-    cout << fila._init_pointer << "\n";
-    cout << fila._final_pointer << "\n";
+    show_queue(fila);
     assert(fila.get_size() == 1);
 
     fila.insert("Item 2");
-    cout << fila._init_pointer << "\n";
-    cout << fila._final_pointer << "\n";
+    show_queue(fila);
     assert(fila.get_size() == 2);
 
     fila.insert("Item 3");
-    cout << fila._init_pointer << "\n";
-    cout << fila._final_pointer << "\n";
+    show_queue(fila);
     assert(fila.get_size() == 3);
 
     fila.remove();
-    cout << fila._init_pointer << "\n";
-    cout << fila._final_pointer << "\n";
-    assert(fila.get_size() == 2);
-
-    cout << "Teste \n";   
+    show_queue(fila);
+    assert(fila.get_size() == 2);   
    
     return 0;
 };

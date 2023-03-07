@@ -2,12 +2,6 @@
 #include <iostream>
 #include <cassert>
 
-struct node{
-    string content;
-    struct node *next;
-
-};
-
 Queue::Queue(){
     _queue_size = 0;
     _init_pointer = NULL;
