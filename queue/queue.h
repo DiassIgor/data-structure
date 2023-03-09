@@ -16,14 +16,13 @@ class Queue{
     public:
         void insert(string content);
         void remove();
-        //struct node const peek();
+
+        enum class CHANGING {INCREASE, DECREASE};
 
         size_t const get_size() {return _queue_size;}
-        void set_size(string changing) {changing == "increase" ? _queue_size++ : _queue_size--;}
+        void set_size(CHANGING changing) {changing == CHANGING::INCREASE ? _queue_size++ : _queue_size--;}
         struct node *_init_pointer;
         struct node *_final_pointer;
-        //struct node * const get_init_pointer() {return _init_pointer;}
-        //struct node * const get_final_pointer() {return _final_pointer;}
 
         Queue();
 
