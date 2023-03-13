@@ -11,12 +11,21 @@ struct node {
 };
 
 
-class stack{
+class Stack{
     public:
-        struct node *_init_pointer;
-    private:
-};
 
+        void insert(struct node);
+        struct node remove();
+        
+        void show_top();
+        void show_stack();
+
+        Stack();
+
+    private:
+        size_t stack_size;
+        struct node *_top_pointer;
+};
 
 
 #endif
