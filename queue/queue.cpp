@@ -45,3 +45,9 @@ void Queue::remove(){
 
     Queue::set_size(CHANGING::DECREASE);
 };
+
+void Queue::show_queue(){
+    cout << "First Item: " << _init_pointer->content << "\n";
+    cout << "Last Item: " << _final_pointer->content << "\n";
+    cout << "------------------------------------------------- \n";
+};
