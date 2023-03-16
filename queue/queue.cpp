@@ -2,12 +2,6 @@
 #include <iostream>
 #include <cassert>
 
-Queue::Queue(){
-    _queue_size = 0;
-    _init_pointer = NULL;
-    _final_pointer = NULL;
-}
-
 void Queue::insert(string content){
 
     // Dynamic Allocation

@@ -14,16 +14,18 @@ struct node {
 class Stack{
     public:
 
-        void insert(struct node);
+        void insert(string content);
         struct node remove();
         
         void show_top();
         void show_stack();
 
-        Stack();
+        Stack()
+            :_stack_size(0), _top_pointer(NULL)
+            {};
 
     private:
-        size_t stack_size;
+        size_t _stack_size;
         struct node *_top_pointer;
 };
 

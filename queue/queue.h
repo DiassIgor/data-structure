@@ -23,7 +23,9 @@ class Queue{
         size_t const get_size() {return _queue_size;}
         void set_size(CHANGING changing) {changing == CHANGING::INCREASE ? _queue_size++ : _queue_size--;}
 
-        Queue();
+        Queue()
+            :_queue_size(0),_init_pointer(NULL),_final_pointer(NULL)
+        {};
 
         void show_queue();
 
