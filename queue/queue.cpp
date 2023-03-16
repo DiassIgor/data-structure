@@ -22,7 +22,7 @@ void Queue::insert(string content){
         _final_pointer = &*new_node;
     };
 
-    Queue::set_size(CHANGING::INCREASE);
+    _queue_size += 1;
 
 };
 
@@ -37,7 +37,7 @@ void Queue::remove(){
         free(first_node);
     };
 
-    Queue::set_size(CHANGING::DECREASE);
+    _queue_size -= 1;
 };
 
 void Queue::show_queue(){
