@@ -22,7 +22,7 @@ int main(){
 
     fila.remove();
     fila.show_queue();
-    assert(fila.get_size() == 2);   
+    assert(fila.get_size() == 2); 
    
     return 0;
 };

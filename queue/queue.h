@@ -6,13 +6,15 @@
 
 using namespace std;
 
-struct node{
-    string content;
-    struct node *next;
-
-};
 
 class Queue{
+
+    struct node{
+        string content;
+        struct node *next;
+        };
+
+    typedef struct node node;
 
     public:
         void insert(string content);
@@ -27,10 +29,9 @@ class Queue{
 
     private:
         size_t _queue_size;
-        struct node *_init_pointer;
-        struct node *_final_pointer;
-
-        
+        node *_init_pointer;
+        node *_final_pointer;
+   
 };
 
 #endif

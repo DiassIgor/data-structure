@@ -5,7 +5,7 @@
 void Queue::insert(string content){
 
     // Dynamic Allocation
-    struct node *new_node = (struct node *) malloc(sizeof(struct node));
+    node *new_node = (node *) malloc(sizeof(node));
     (*new_node).content = content;
     (*new_node).next = NULL;
     assert(new_node != NULL);
@@ -32,7 +32,7 @@ void Queue::remove(){
         cout << "The queue is already empty";
     }
     else{
-        struct node *first_node = _init_pointer;
+        node *first_node = _init_pointer;
         _init_pointer = (*_init_pointer).next;
         free(first_node);
     };
