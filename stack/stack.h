@@ -12,10 +12,18 @@ struct node {
 
 
 class Stack{
+
+    struct node {
+        string content;
+        struct node *next;
+    };
+
+    typedef struct node node;
+
     public:
 
         void insert(string content);
-        struct node remove();
+        node remove();
         
         void show_top();
         void show_stack();
@@ -26,7 +34,7 @@ class Stack{
 
     private:
         size_t _stack_size;
-        struct node *_top_pointer;
+        node *_top_pointer;
 };
 
 
