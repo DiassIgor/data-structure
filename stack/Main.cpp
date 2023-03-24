@@ -15,9 +15,13 @@ int main(){
     stack.show_stack();
 
     stack.remove();
+    assert(stack.get_size()==2);
     stack.remove();
+    assert(stack.get_size()==1);
     stack.show_stack();
-
+    stack.remove();
+    assert(stack.get_size()==0);
+    stack.remove();
 }
 
 

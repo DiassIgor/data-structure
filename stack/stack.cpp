@@ -29,7 +29,7 @@ void Stack::remove(){
 
     if (_stack_size == 0)
     {
-        cout << "The queue is already empty";
+        cout << "The queue is already empty\n";
     }
     else{
 
