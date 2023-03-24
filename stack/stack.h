@@ -9,7 +9,7 @@ class Stack{
 
     struct node {
         string content;
-        struct node *next;
+        struct node *previous;
     };
 
     typedef struct node node;
