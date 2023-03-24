@@ -17,14 +17,16 @@ class LinkedList {
     public:
 
         LinkedList()
-            :_init_pointer(NULL),_final_pointer(NULL) 
+            :_init_pointer(NULL),_final_pointer(NULL),_list_size(0)
             {};
 
         void insert(string content);
+        void show_list();
 
     private:
         node *_init_pointer;
-        node *_final_pointer; 
+        node *_final_pointer;
+        size_t _list_size;
 
 };
 
