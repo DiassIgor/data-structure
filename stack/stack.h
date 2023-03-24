@@ -17,7 +17,7 @@ class Stack{
     public:
 
         void insert(string content);
-        node remove();
+        void remove();
         
         void show_top();
         void show_stack();

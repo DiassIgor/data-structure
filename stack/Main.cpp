@@ -12,7 +12,10 @@ int main(){
     stack.insert("Item 2");
     stack.show_top();
     stack.insert("Item 3");
+    stack.show_stack();
 
+    stack.remove();
+    stack.remove();
     stack.show_stack();
 
 }
