@@ -11,7 +11,7 @@ void Queue::insert(string content){
     assert(new_node != NULL);
 
     // If the queue is empty
-    if(_init_pointer == NULL){
+    if(_queue_size == 0){
         _init_pointer = &*new_node;
         _final_pointer = &*new_node;
 
@@ -28,16 +28,16 @@ void Queue::insert(string content){
 
 void Queue::remove(){
 
-    if(_init_pointer == NULL){
-        cout << "The queue is already empty";
+    if(_queue_size == 0){
+        cout << "The queue is already empty\n";
     }
     else{
         node *first_node = _init_pointer;
         _init_pointer = (*_init_pointer).next;
         free(first_node);
+        _queue_size -= 1;
     };
 
-    _queue_size -= 1;
 };
 
 void Queue::show_queue(){
