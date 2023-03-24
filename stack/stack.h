@@ -5,12 +5,6 @@
 
 using namespace std;
 
-struct node {
-    string content;
-    struct node *next;
-};
-
-
 class Stack{
 
     struct node {
