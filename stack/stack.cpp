@@ -25,6 +25,11 @@ void Stack::insert(string content){
 
 };
 
+void Stack::show_top(){
+    cout << "Top stack: " << (*_top_pointer).content << endl;
+}
+
+
 void Stack::show_stack(){
 
     node *aux_point = &*_top_pointer; 
