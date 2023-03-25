@@ -21,6 +21,7 @@ class LinkedList {
             {};
 
         void insert(string content);
+        void pos_insert(string content, size_t position);
         void show_list();
 
     private:
