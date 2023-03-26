@@ -87,3 +87,17 @@ void LinkedList::show_list(){
     cout << "\n-----------------------------------------------------------------\n";
 
 };
+
+string LinkedList::test_list(){
+
+    node *aux_point = _init_pointer;
+    string aux_string = "";
+
+    for(int i=0; i<_list_size; i++){
+        aux_string.append((*aux_point).content);
+        aux_string.append(" | ");
+        aux_point = (*aux_point).next;
+    }
+
+    return aux_string;
+}
