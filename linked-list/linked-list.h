@@ -27,6 +27,16 @@ class LinkedList {
 
         size_t get_size(){return _list_size;}
 
+        ~LinkedList(){
+
+            node *current = _init_pointer;
+            while (current != NULL){
+                node *temp = current;
+                current = current->next;
+                delete temp;
+            }
+        };
+
     private:
         node *_init_pointer;
         node *_final_pointer;
