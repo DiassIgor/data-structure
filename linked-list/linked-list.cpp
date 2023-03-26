@@ -38,8 +38,9 @@ void LinkedList::pos_insert(string content, size_t position){
         else{
 
             node *aux_pointer = _init_pointer;
-            for(int i;i<position-1;i++){
+            for(int i=0;i<position-1;i++){
                 aux_pointer = (*aux_pointer).next;
+                cout << (*aux_pointer).content;
             }
 
             (*new_node).next = (*aux_pointer).next;

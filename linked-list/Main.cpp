@@ -10,6 +10,7 @@ int main(){
     link_list.insert("Item 2");
     link_list.insert("Item 3");
     assert(link_list.get_size()==3);
+    link_list.insert("Item 5");
     link_list.pos_insert("Item 4", 3);
     link_list.show_list();
 
