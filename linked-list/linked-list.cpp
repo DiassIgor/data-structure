@@ -24,7 +24,7 @@ void LinkedList::insert(string content){
 
 void LinkedList::pos_insert(string content, size_t position){
 
-    if (position <= _list_size){
+    if (position < _list_size){
 
         node *new_node = (node *) malloc(sizeof(node));
         (*new_node).content = content;
@@ -38,7 +38,7 @@ void LinkedList::pos_insert(string content, size_t position){
         else{
 
             node *aux_pointer = _init_pointer;
-            for(int i;i<=position;i++){
+            for(int i;i<position-1;i++){
                 aux_pointer = (*aux_pointer).next;
             }
 
@@ -47,6 +47,25 @@ void LinkedList::pos_insert(string content, size_t position){
         }
 
         _list_size += 1;
+    }
+    else if(position == _list_size){
+
+        node *new_node = (node *) malloc(sizeof(node));
+        (*new_node).content = content;
+        (*new_node).next = NULL;
+        assert(new_node != NULL);
+
+        if (_init_pointer==NULL){
+            _init_pointer = new_node;
+            _final_pointer = new_node;
+        }
+        else{
+            (*_final_pointer).next = new_node;
+            _final_pointer = new_node;
+        }
+
+        _list_size += 1;
+
     }
     else{
 

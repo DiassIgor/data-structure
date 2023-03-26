@@ -24,6 +24,8 @@ class LinkedList {
         void pos_insert(string content, size_t position);
         void show_list();
 
+        size_t get_size(){return _list_size;}
+
     private:
         node *_init_pointer;
         node *_final_pointer;
