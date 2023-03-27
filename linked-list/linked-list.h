@@ -2,6 +2,7 @@
 #define _LINKED_LIST_H
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -33,7 +34,9 @@ class LinkedList {
             while (current != NULL){
                 node *temp = current;
                 current = current->next;
-                delete temp;
+                cout << "destruc ";
+                free(temp);
+                //delete temp;
             }
         };
 
