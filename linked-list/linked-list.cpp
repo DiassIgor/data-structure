@@ -114,7 +114,7 @@ string LinkedList::test_list(){
 
     for(int i=0; i<_list_size; i++){
         aux_string.append((*aux_point).content);
-        aux_string.append(" | ");
+        aux_string.append("|");
         aux_point = (*aux_point).next;
     }
 
