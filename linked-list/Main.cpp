@@ -74,12 +74,12 @@ void test_pos_insert4(){
 
 int main(){
 
-    //test_pos_insert0();
+    //test_pos_insert0(); //OK
     //cout << "\n test \n";
-    //test_pos_insert1();
-    //test_pos_insert2();
+    //test_pos_insert1(); //OK
+    test_pos_insert2(); //OK 
     //test_pos_insert3();
-    test_pos_insert4();
+    //test_pos_insert4(); //OK
 
     return 0;
 };
