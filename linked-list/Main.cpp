@@ -23,6 +23,8 @@ void test_layout(string actual, string expected, string test_name){
     }
     else{
          cout << test_name << " -> ERROR!" << endl;
+         cout << "Expected:\n" << expected << endl;
+         cout << "Actual Output:\n" << actual << endl;
     }
 };
 
