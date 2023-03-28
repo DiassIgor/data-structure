@@ -24,17 +24,33 @@ void LinkedList::insert(string content){
 
 void LinkedList::pos_insert(string content, size_t position){
 
-    if (position < _list_size && position > 0){
+    if (position > _list_size || position < 0){
+    
+        cout << "Wrong position value!\n";
+
+    }
+
+    else{
 
         node *new_node = (node *) malloc(sizeof(node));
+        assert(new_node != NULL);
+        
         (*new_node).content = content;
         (*new_node).next = NULL;
-        assert(new_node != NULL);
 
-        if (_init_pointer==NULL){
+        if(position == 0){
+
+            (*new_node).next = _init_pointer;
             _init_pointer = new_node;
+        } 
+
+        else if(position == _list_size){
+
+            (*_final_pointer).next = new_node;
             _final_pointer = new_node;
+
         }
+
         else{
 
             node *aux_pointer = _init_pointer;
@@ -48,48 +64,8 @@ void LinkedList::pos_insert(string content, size_t position){
             (*aux_pointer).next = new_node;
         }
 
-        _list_size += 1;
-    }
-    else if(position == _list_size){
+    _list_size += 1;
 
-        node *new_node = (node *) malloc(sizeof(node));
-        (*new_node).content = content;
-        (*new_node).next = NULL;
-        assert(new_node != NULL);
-
-        if (_init_pointer==NULL){
-            _init_pointer = new_node;
-            _final_pointer = new_node;
-        }
-        else{
-            (*_final_pointer).next = new_node;
-            _final_pointer = new_node;
-        }
-
-        _list_size += 1;
-    }
-    else if(position == 0){
-        
-        node *new_node = (node *) malloc(sizeof(node));
-        (*new_node).content = content;
-        (*new_node).next = NULL;
-        assert(new_node != NULL);
-
-        if (_init_pointer==NULL){
-            _init_pointer = new_node;
-            _final_pointer = new_node;
-        }
-        else{
-            (*new_node).next = _init_pointer;
-            _init_pointer = new_node;
-        }
-
-        _list_size += 1;
-
-    }
-    else{
-
-        cout << "Wrong position value!\n";
     }
 }
 
