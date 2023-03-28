@@ -86,8 +86,8 @@ void test_pos_insert5(){
 
 int main(){
 
-    //test_pos_insert0(); //OK
-    //test_pos_insert1(); //OK
+    test_pos_insert0(); //OK
+    test_pos_insert1(); //OK
     //test_pos_insert2(); //OK 
     //test_pos_insert3(); //OK
     //test_pos_insert4(); //OK
