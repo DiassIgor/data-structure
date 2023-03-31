@@ -34,9 +34,7 @@ class LinkedList {
             while (current != NULL){
                 node *temp = current;
                 current = current->next;
-                cout << "destruc ";
-                free(temp);
-                //delete temp;
+                delete temp;
             }
         };
 

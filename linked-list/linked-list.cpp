@@ -4,10 +4,11 @@
 
 void LinkedList::insert(string content){
 
-    node *new_node = (node *) malloc(sizeof(node));
+    node *new_node = new node;
+    assert(new_node != NULL);
+
     new_node->content = content;
     new_node->next = NULL;
-    assert(new_node != NULL);
 
     if (_init_pointer == NULL){
         _init_pointer = new_node;
@@ -30,7 +31,7 @@ void LinkedList::pos_insert(string content, size_t position){
 
     else{
 
-        node *new_node = (node *) malloc(sizeof(node));
+        node *new_node = new node;
         assert(new_node != NULL);
 
         new_node->content = content;
