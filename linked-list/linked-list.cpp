@@ -71,7 +71,6 @@ void LinkedList::remove(size_t position){
 
         cout << "Wrong position value!\n";
     }
-
     else{
         node *aux_pointer = _init_pointer;
 
@@ -85,7 +84,7 @@ void LinkedList::remove(size_t position){
             node *aux_pointer_prev = aux_pointer;
             aux_pointer = aux_pointer->next;
 
-            aux_pointer_prev = aux_pointer->next;
+            aux_pointer_prev->next = aux_pointer->next;
             delete aux_pointer;            
         }
 
@@ -98,7 +97,7 @@ void LinkedList::remove(size_t position){
             node *aux_pointer_prev = aux_pointer;
             aux_pointer = aux_pointer->next;
 
-            aux_pointer_prev = aux_pointer->next;
+            aux_pointer_prev->next = aux_pointer->next;
             delete aux_pointer;
 
         }

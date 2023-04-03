@@ -84,6 +84,27 @@ void test_pos_insert5(){
     test_layout(actual, expected, "Pos_insert5");
 };
 
+// Test if the delete of the initial node works properly
+void test_remove0(){
+    LinkedList link_list = standard_list();
+    link_list.remove(0);
+    string actual = link_list.test_list();
+    string expected = "Item 2|Item 3|Item 4|";
+    test_layout(actual, expected, "Delete0");
+
+};
+
+// Test if the delete of the node in position 1 works properly
+void test_remove1(){
+    LinkedList link_list = standard_list();
+    link_list.remove(1);
+    string actual = link_list.test_list();
+    string expected = "Item 1|Item 3|Item 4|";
+    test_layout(actual, expected, "Delete1");
+
+};
+
+
 int main(){
 
     test_pos_insert0(); //OK
@@ -92,6 +113,8 @@ int main(){
     test_pos_insert3(); //OK
     test_pos_insert4(); //OK
     test_pos_insert5(); //OK
+    test_remove0(); //OK
+    test_remove1();
 
     return 0;
 };
