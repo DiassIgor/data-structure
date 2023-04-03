@@ -63,7 +63,55 @@ void LinkedList::pos_insert(string content, size_t position){
 
     _list_size += 1;
     }
-}
+};
+
+void LinkedList::remove(string content, size_t position){
+
+    if (position > _list_size || position < 0){
+
+        cout << "Wrong position value!\n";
+    }
+
+    else{
+        node *aux_pointer = _init_pointer;
+
+        if(position == 0){
+
+            _init_pointer = _init_pointer->next;
+            delete aux_pointer;
+        }
+        else if(position == 1){
+
+            node *aux_pointer_prev = aux_pointer;
+            aux_pointer = aux_pointer->next;
+
+            aux_pointer_prev = aux_pointer->next;
+            delete aux_pointer;            
+        }
+
+        else if(position == _list_size){
+
+            for(int i=0; i<position-2; i++){
+                aux_pointer = aux_pointer->next;
+            }
+            
+            node *aux_pointer_prev = aux_pointer;
+            aux_pointer = aux_pointer->next;
+
+            aux_pointer_prev = aux_pointer->next;
+            delete aux_pointer;
+
+        }
+        else{
+            for(int i=0; i<position-1; i++){
+                aux_pointer = aux_pointer->next;
+            }   
+        }
+
+        _list_size -= 1;
+    }
+
+};
 
 void LinkedList::show_list(){
     
