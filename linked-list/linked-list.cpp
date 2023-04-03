@@ -65,7 +65,7 @@ void LinkedList::pos_insert(string content, size_t position){
     }
 };
 
-void LinkedList::remove(string content, size_t position){
+void LinkedList::remove(size_t position){
 
     if (position > _list_size || position < 0){
 
@@ -94,7 +94,7 @@ void LinkedList::remove(string content, size_t position){
             for(int i=0; i<position-2; i++){
                 aux_pointer = aux_pointer->next;
             }
-            
+
             node *aux_pointer_prev = aux_pointer;
             aux_pointer = aux_pointer->next;
 
