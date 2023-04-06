@@ -67,7 +67,7 @@ void LinkedList::pos_insert(string content, size_t position){
 
 void LinkedList::remove(size_t position){
 
-    if (position > _list_size || position < 0){
+    if (position >= _list_size || position < 0){
 
         cout << "Wrong position value!\n";
     }
@@ -79,6 +79,21 @@ void LinkedList::remove(size_t position){
             _init_pointer = _init_pointer->next;
             delete aux_pointer;
         }
+
+
+        else if(position == _list_size - 1){
+
+            for(int i=0; i<position-1; i++){
+                aux_pointer = aux_pointer->next;
+            }
+
+            node *aux_pointer_prev = aux_pointer;
+            aux_pointer = aux_pointer->next;
+
+            aux_pointer_prev->next = aux_pointer->next;
+            delete aux_pointer;
+        }
+        
         else if(position == 1){
 
             node *aux_pointer_prev = aux_pointer;
@@ -88,9 +103,8 @@ void LinkedList::remove(size_t position){
             delete aux_pointer;            
         }
 
-        else if(position == _list_size){
-
-            for(int i=0; i<position-2; i++){
+        else{
+            for(int i=0; i<position-1; i++){
                 aux_pointer = aux_pointer->next;
             }
 
@@ -100,11 +114,6 @@ void LinkedList::remove(size_t position){
             aux_pointer_prev->next = aux_pointer->next;
             delete aux_pointer;
 
-        }
-        else{
-            for(int i=0; i<position-1; i++){
-                aux_pointer = aux_pointer->next;
-            }   
         }
 
         _list_size -= 1;
