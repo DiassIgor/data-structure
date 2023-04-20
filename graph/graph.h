@@ -1,7 +1,7 @@
 #ifndef _GRAPH_
 #define _GRAPH_
 
-#include "linked-list/linked-list.h"
+#include "../linked-list/linked-list.h"
 
 class Graph{
 
@@ -14,13 +14,19 @@ class Graph{
     typedef struct vertex vertex;
 
     public:
+
+        Graph()
+            :_vertex_list(LinkedList()),_graph_size(0)
+            {};
+
         void add_vertex(double value);
         void add_edge(string id_1, string id_2);
         void remove_vertex(string id);
         void remove_edge(string id_1, string id_2);
 
     private:
-        LinkedList vertex_list;
+        LinkedList _vertex_list;
+        size_t _graph_size;
 };
 
 #endif
