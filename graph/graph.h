@@ -16,7 +16,7 @@ class Graph{
     public:
 
         Graph()
-            :_vertex_list(LinkedList()),_graph_size(0)
+            :_vertex_list(),_graph_size(0)
             {};
 
         void add_vertex(double value);
