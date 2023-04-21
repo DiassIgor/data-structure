@@ -2,6 +2,7 @@
 #define _GRAPH_
 
 #include "../linked-list/linked-list.h"
+#include <unordered_map>
 
 class Graph{
 
@@ -16,7 +17,7 @@ class Graph{
     public:
 
         Graph()
-            :_vertex_list(),_graph_size(0)
+            :_vertex_map(),_graph_size(0)
             {};
 
         void add_vertex(double value);
@@ -25,7 +26,7 @@ class Graph{
         void remove_edge(string id_1, string id_2);
 
     private:
-        LinkedList _vertex_list;
+        std::unordered_map<string, vertex*> _vertex_map;
         size_t _graph_size;
 };
 

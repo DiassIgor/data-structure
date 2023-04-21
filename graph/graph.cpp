@@ -12,6 +12,6 @@ void Graph::add_vertex(double value){
     new_vertex->adj_list = LinkedList();
     new_vertex->value = value;
 
-    _vertex_list.insert(id);
+    _vertex_map[id] = new_vertex;
     _graph_size += 1;
 }
