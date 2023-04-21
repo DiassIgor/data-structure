@@ -93,15 +93,6 @@ void LinkedList::remove(size_t position){
             aux_pointer_prev->next = aux_pointer->next;
             delete aux_pointer;
         }
-        
-        else if(position == 1){
-
-            node *aux_pointer_prev = aux_pointer;
-            aux_pointer = aux_pointer->next;
-
-            aux_pointer_prev->next = aux_pointer->next;
-            delete aux_pointer;            
-        }
 
         else{
             for(int i=0; i<position-1; i++){

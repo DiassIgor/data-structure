@@ -146,7 +146,7 @@ int main(){
     test_remove0(); //OK
     test_remove1(); //OK
     test_remove2(); //OK
-    test_remove3(); //Error
+    test_remove3(); //OK
     test_remove4(); //OK
     
     return 0;
