@@ -18,9 +18,17 @@ void test_show_vertex(){
     graph.show_vertex();
 }
 
+void test_add_edge(){
+    Graph graph;
+    graph.add_vertex(0.5);
+    graph.add_vertex(2.5);
+    graph.add_edge("0","1");
+}
+
 int main(){
 
     test_add_vertex();
     test_show_vertex();
+    test_add_edge();
     return 0;
 }

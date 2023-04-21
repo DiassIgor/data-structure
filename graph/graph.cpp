@@ -16,6 +16,12 @@ void Graph::add_vertex(double value){
     _graph_size += 1;
 }
 
+void Graph::add_edge(string id_1, string id_2){
+
+    _vertex_map[id_1]->adj_list.insert(id_2);
+    _vertex_map[id_2]->adj_list.insert(id_1);
+}
+
 void Graph::show_vertex(){
 
     for (auto pair: _vertex_map){
