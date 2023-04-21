@@ -15,3 +15,10 @@ void Graph::add_vertex(double value){
     _vertex_map[id] = new_vertex;
     _graph_size += 1;
 }
+
+void Graph::show_vertex(){
+
+    for (auto pair: _vertex_map){
+        cout << pair.first << ": " << pair.second->value << "|";
+    }
+}

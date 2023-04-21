@@ -9,8 +9,18 @@ void test_add_vertex(){
     graph.add_vertex(2.4);
 }
 
+void test_show_vertex(){
+    Graph graph;
+    graph.add_vertex(0.3);
+    graph.add_vertex(1.3);
+    graph.add_vertex(2.3);
+    graph.add_vertex(3.3);
+    graph.show_vertex();
+}
+
 int main(){
 
     test_add_vertex();
+    test_show_vertex();
     return 0;
 }

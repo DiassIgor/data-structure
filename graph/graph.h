@@ -24,6 +24,7 @@ class Graph{
         void add_edge(string id_1, string id_2);
         void remove_vertex(string id);
         void remove_edge(string id_1, string id_2);
+        void show_vertex();
 
     private:
         std::unordered_map<string, vertex*> _vertex_map;
