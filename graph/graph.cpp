@@ -27,4 +27,14 @@ void Graph::show_vertex(){
     for (auto pair: _vertex_map){
         cout << pair.first << ": " << pair.second->value << "|";
     }
+    cout << endl;
+}
+
+void Graph::show_edges(){
+
+    for (auto pair: _vertex_map){
+        cout << "Vertex: " << pair.first << endl;
+        pair.second->adj_list.show_list();
+    }
+    
 }

@@ -23,6 +23,7 @@ void test_add_edge(){
     graph.add_vertex(0.5);
     graph.add_vertex(2.5);
     graph.add_edge("0","1");
+    graph.show_edges();
 }
 
 int main(){
