@@ -1,5 +1,7 @@
 #include "graph.h"
 #include <cassert>
+#include "../linked-list/linked-list.cpp"
+#include "../linked-list/linked-list.h"
 
 
 void test_add_vertex(){
