@@ -22,7 +22,13 @@ void test_add_edge(){
     Graph graph;
     graph.add_vertex(0.5);
     graph.add_vertex(2.5);
-    graph.add_edge("0","1");
+    graph.add_vertex(3.5);
+    graph.add_vertex(4.5);
+    graph.add_edge(0,1);
+    graph.add_edge(3,0);
+    graph.add_edge(0,2);
+    graph.add_edge(2,1);
+
     graph.show_edges();
 }
 
