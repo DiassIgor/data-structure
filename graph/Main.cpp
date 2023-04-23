@@ -30,6 +30,33 @@ void test_add_edge(){
     graph.add_edge(2,1);
 
     graph.show_edges();
+    cout << "-------------------" << endl;
+}
+
+void test_remove_edge1(){
+    Graph graph;
+    graph.add_vertex(0.5);
+    graph.add_vertex(2.5);
+    graph.add_edge(0,1);
+    cout << "Before: " << endl;
+    graph.show_edges();
+    graph.remove_edge(0,1);
+    cout << "After: " << endl;
+    graph.show_edges();
+    cout << "-------------------" << endl;
+}
+
+void test_remove_edge2(){
+    Graph graph;
+    graph.add_vertex(0.5);
+    graph.add_vertex(2.5);
+    graph.add_edge(0,1);
+    cout << "Before: " << endl;
+    graph.show_edges();
+    graph.remove_edge(1,0);
+    cout << "After: " << endl;
+    graph.show_edges();
+    cout << "-------------------" << endl;
 }
 
 int main(){
@@ -37,5 +64,7 @@ int main(){
     test_add_vertex();
     test_show_vertex();
     test_add_edge();
+    test_remove_edge1();
+    test_remove_edge2();
     return 0;
 }

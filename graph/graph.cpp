@@ -16,9 +16,22 @@ void Graph::add_vertex(double value){
 }
 
 void Graph::remove_edge(size_t id_1, size_t id_2){
+   
+    std::vector<size_t> & edges_1 = _vertex_map[id_1]->adj_list;
 
-    _vertex_map[id_1];
+    for (size_t i=0;i < edges_1.size(); i++){
+        if(edges_1[i] == id_2){
+            edges_1.erase(edges_1.begin() + i);
+        }
+    };
 
+    std::vector<size_t> & edges_2 = _vertex_map[id_2]->adj_list;
+
+    for (size_t i=0; i < edges_2.size(); i++){
+        if(edges_2[i] == id_1){
+            edges_2.erase(edges_2.begin() + i);
+        }
+    };
 }
 
 
@@ -39,7 +52,7 @@ void Graph::show_vertex(){
 void Graph::show_edges(){
 
     for (auto pair: _vertex_map){
-        cout << "Vertex: " << pair.first << endl;
+        cout << "Vertex: " << pair.first << "---";
         cout << "Edges: ";
         for (auto edge: pair.second->adj_list){
             cout << edge << "|";
