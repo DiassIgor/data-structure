@@ -37,10 +37,11 @@ void Graph::remove_edge(size_t id_1, size_t id_2){
 void Graph::remove_vertex(size_t id){
 
     for (size_t connection : _vertex_map[id]->adj_list){
-        Graph::remove_edge(id, connection);
+        cout << connection << "~";
+        //Graph::remove_edge(id, connection);
     };
 
-    delete _vertex_map[id];
+    //delete _vertex_map[id];
 }
 
 
