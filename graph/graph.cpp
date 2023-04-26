@@ -47,7 +47,9 @@ void Graph::remove_vertex(size_t id){
         //Graph::remove_edge(id, connection);
     };
 
-    //delete _vertex_map[id];
+    delete _vertex_map[id];
+    _vertex_map[id] = nullptr;
+    _graph_size -= 1;
 }
 
 
@@ -64,10 +66,13 @@ void Graph::show_vertex(){
 void Graph::show_edges(){
 
     for (auto pair: _vertex_map){
-        cout << "Vertex: " << pair.first << "---";
-        cout << "Edges: ";
-        for (auto edge: pair.second->adj_list){
-            cout << edge << "|";
+
+        if (pair.second != nullptr){
+            cout << "Vertex: " << pair.first << "---";
+            cout << "Edges: ";
+            for (auto edge: pair.second->adj_list){
+                cout << edge << "|";
+            }
         }
         cout << endl;
     }

@@ -130,10 +130,35 @@ void test_remove_edge3(){
     test_layout(actual, expected, "Remove_edge3");
 }
 
-void test_show_vertex(){
-    
+void test_remove_vertex0(){
+
     Graph graph = standard_graph();
-    graph.show_vertex();
+    graph.remove_vertex(0);
+
+    size_t actual = graph.get_size();
+    size_t expected = 3;
+    test_layout(actual, expected, "Remove_vertex0");
+}
+
+void test_remove_vertex1(){
+
+    Graph graph = standard_graph();
+    graph.remove_vertex(0);
+
+    auto actual = graph.get_vertex_map().at(0);
+    auto expected = nullptr;
+    test_layout(actual, expected, "Remove_vertex1");
+}
+
+void test_remove_vertex2(){
+
+    Graph graph = standard_graph();
+    graph.remove_vertex(0);
+
+    auto actual = graph.get_vertex_map().at(0);
+    auto expected = nullptr;
+    test_layout(actual, expected, "Remove_vertex2");
+    graph.show_edges();
 }
 
 int main(){
@@ -151,8 +176,9 @@ int main(){
     test_remove_edge2();
     test_remove_edge3();
 
-    //test_remove_vertex_1();
-    //test_remove_vertex_2();
+    test_remove_vertex0();
+    test_remove_vertex1();
+    test_remove_vertex2();
 
     return 0;
 }
