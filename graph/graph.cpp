@@ -15,6 +15,12 @@ void Graph::add_vertex(double value){
     _graph_size += 1;
 }
 
+void Graph::add_edge(size_t id_1, size_t id_2){
+
+    _vertex_map[id_1]->adj_list.push_back(id_2);
+    _vertex_map[id_2]->adj_list.push_back(id_1);
+}
+
 void Graph::remove_edge(size_t id_1, size_t id_2){
    
     std::vector<size_t> & edges_1 = _vertex_map[id_1]->adj_list;
@@ -45,11 +51,7 @@ void Graph::remove_vertex(size_t id){
 }
 
 
-void Graph::add_edge(size_t id_1, size_t id_2){
 
-    _vertex_map[id_1]->adj_list.push_back(id_2);
-    _vertex_map[id_2]->adj_list.push_back(id_1);
-}
 
 void Graph::show_vertex(){
 
