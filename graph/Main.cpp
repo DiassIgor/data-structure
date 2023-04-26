@@ -16,12 +16,12 @@ Graph standard_graph(){
     graph.add_edge(0,1);
     graph.add_edge(2,0);
     graph.add_edge(0,3);
-    graph.add_edge(1,2);
+    graph.add_edge(1,3);
 
     return graph;
 }
 
-void test_layout(double actual, double expected, string test_name){
+void test_layout(auto actual, auto expected, string test_name){
     if (actual == expected){
         cout << test_name << " -> PASSED!" << endl;
     }
@@ -56,8 +56,8 @@ void test_add_vertex2(){
 
     Graph graph = standard_graph();
 
-    double actual = graph.get_size();
-    double expected = 4;
+    size_t actual = graph.get_size();
+    size_t expected = 4;
     test_layout(actual, expected, "Add_vertex2");
 
 }
@@ -66,8 +66,8 @@ void test_add_edge0(){
 
     Graph graph = standard_graph();
 
-    double actual = graph.get_vertex_map().at(0)->adj_list.at(0);
-    double expected = 1;
+    size_t actual = graph.get_vertex_map().at(0)->adj_list.at(0);
+    size_t expected = 1;
     test_layout(actual, expected, "Add_edge0");
 }
 
@@ -75,8 +75,8 @@ void test_add_edge1(){
 
     Graph graph = standard_graph();
 
-    double actual = graph.get_vertex_map().at(0)->adj_list.at(2);
-    double expected = 3;
+    size_t actual = graph.get_vertex_map().at(0)->adj_list.at(2);
+    size_t expected = 3;
     test_layout(actual, expected, "Add_edge1");
 }
 
@@ -84,87 +84,57 @@ void test_add_edge2(){
 
     Graph graph = standard_graph();
 
-    double actual = graph.get_vertex_map().at(2)->adj_list.at(0);
-    double expected = 0;
+    size_t actual = graph.get_vertex_map().at(2)->adj_list.at(0);
+    size_t expected = 0;
     test_layout(actual, expected, "Add_edge2");
 }
 
-void test_show_vertex(){
-    Graph graph;
-    graph.add_vertex(0.3);
-    graph.add_vertex(1.3);
-    graph.add_vertex(2.3);
-    graph.add_vertex(3.3);
-    graph.show_vertex();
-}
+void test_remove_edge0(){
 
-
-
-void test_remove_edge(){
-    Graph graph;
-    graph.add_vertex(0.5);
-    graph.add_vertex(2.5);
-    graph.add_edge(0,1);
-    cout << "Before: " << endl;
-    graph.show_edges();
+    Graph graph = standard_graph();
     graph.remove_edge(0,1);
-    cout << "After: " << endl;
-    graph.show_edges();
-    cout << "-------------------" << endl;
+
+    size_t actual = graph.get_vertex_map().at(0)->adj_list.at(0);
+    size_t expected = 2;
+    test_layout(actual, expected, "Remove_edge0");
 }
 
-void test_remove_edge_2(){
-    Graph graph;
-    graph.add_vertex(0.5);
-    graph.add_vertex(2.5);
-    graph.add_vertex(3.5);
-    graph.add_vertex(4.5);
-    graph.add_edge(0,1);
-    graph.add_edge(0,2);
-    graph.add_edge(0,3);
-    cout << "Before: " << endl;
-    graph.show_edges();
+void test_remove_edge1(){
+
+    Graph graph = standard_graph();
+    graph.remove_edge(0,1);
+
+    size_t actual = graph.get_vertex_map().at(1)->adj_list.at(0);
+    size_t expected = 3;
+    test_layout(actual, expected, "Remove_edge1");
+}
+
+void test_remove_edge2(){
+
+    Graph graph = standard_graph();
+    graph.remove_edge(0,2);
+
+    bool actual = graph.get_vertex_map().at(2)->adj_list.empty();
+    bool expected = true;
+    test_layout(actual, expected, "Remove_edge2");
+}
+
+void test_remove_edge3(){
+
+    Graph graph = standard_graph();
     graph.remove_edge(0,1);
     graph.remove_edge(0,2);
-    graph.remove_edge(0,3);
-    cout << "After: " << endl;
-    graph.show_edges();
-    cout << "-------------------" << endl;
 
-}
-void test_remove_vertex_1(){
-    Graph graph;
-    graph.add_vertex(0.5);
-    graph.add_vertex(2.5);
-    graph.add_vertex(3.5);
-    graph.add_edge(0,1);
-    graph.add_edge(0,2);
-    cout << "Before: " << endl;
-    graph.show_edges();
-    graph.remove_vertex(0);
-    cout << "After: " << endl;
-    graph.show_edges();
-    cout << "-------------------" << endl;
+    size_t actual = graph.get_vertex_map().at(0)->adj_list.at(0);
+    size_t expected = 3;
+    test_layout(actual, expected, "Remove_edge3");
 }
 
-void test_remove_vertex_2(){
-    Graph graph;
-    graph.add_vertex(0.5);
-    graph.add_vertex(2.5);
-    graph.add_vertex(3.5);
-    graph.add_vertex(4.5);
-    graph.add_edge(0,1);
-    graph.add_edge(0,2); 
-    graph.add_edge(0,3);
-    cout << "Before: " << endl;
-    graph.show_edges();
-    graph.remove_vertex(0);
-    cout << "After: " << endl;
-    graph.show_edges();
-    cout << "-------------------" << endl;
+void test_show_vertex(){
+    
+    Graph graph = standard_graph();
+    graph.show_vertex();
 }
-
-
 
 int main(){
 
@@ -176,12 +146,13 @@ int main(){
     test_add_edge1();
     test_add_edge2();
 
+    test_remove_edge0();
+    test_remove_edge1();
+    test_remove_edge2();
+    test_remove_edge3();
 
-    //test_show_vertex();
-    //test_add_edge();
-    //test_remove_edge();
     //test_remove_vertex_1();
     //test_remove_vertex_2();
-    //test_remove_edge_2();
+
     return 0;
 }
