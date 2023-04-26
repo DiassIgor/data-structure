@@ -27,7 +27,7 @@ void Graph::remove_edge(size_t id_1, size_t id_2){
 
     for (size_t i=0;i < edges_1.size(); i++){
         if(edges_1[i] == id_2){
-            edges_1.erase(edges_1.begin() + i);
+            edges_1.erase(edges_1.begin() + i); //Influences in the variable connection, line 46
         }
     };
 
@@ -35,16 +35,16 @@ void Graph::remove_edge(size_t id_1, size_t id_2){
 
     for (size_t i=0; i < edges_2.size(); i++){
         if(edges_2[i] == id_1){
-            edges_2.erase(edges_2.begin() + i);
+            edges_2.erase(edges_2.begin() + i); //Influences in the variable connection, line 46
         }
     };
 }
 
 void Graph::remove_vertex(size_t id){
 
-    for (size_t connection : _vertex_map[id]->adj_list){
+    for (const size_t & connection : _vertex_map[id]->adj_list){
         cout << connection << "~";
-        //Graph::remove_edge(id, connection);
+        Graph::remove_edge(id, connection);
     };
 
     delete _vertex_map[id];

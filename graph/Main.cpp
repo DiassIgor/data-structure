@@ -23,12 +23,13 @@ Graph standard_graph(){
 
 void test_layout(auto actual, auto expected, string test_name){
     if (actual == expected){
-        cout << test_name << " -> PASSED!" << endl;
+        std::cout << test_name << " -> PASSED!" << std::endl;
     }
     else{
-         cout << test_name << " -> ERROR!" << endl;
-         cout << "Expected:\n" << expected << endl;
-         cout << "Actual Output:\n" << actual << endl;
+         std::cout << test_name << " -> ERROR!" << std::endl;
+         std::cout << std::boolalpha;  
+         std::cout << "Expected:\n" << expected << std::endl;
+         std::cout << "Actual Output:\n" << actual << std::endl;
     }
 };
 
@@ -155,9 +156,19 @@ void test_remove_vertex2(){
     Graph graph = standard_graph();
     graph.remove_vertex(0);
 
-    auto actual = graph.get_vertex_map().at(0);
-    auto expected = nullptr;
+    size_t actual = graph.get_vertex_map().at(1)->adj_list.at(0);
+    size_t expected = 3;
     test_layout(actual, expected, "Remove_vertex2");
+}
+
+void test_remove_vertex3(){
+
+    Graph graph = standard_graph();
+    graph.remove_vertex(0);
+
+    bool actual = graph.get_vertex_map().at(2)->adj_list.empty();
+    bool expected = true;
+    test_layout(actual, expected, "Remove_vertex3");
     graph.show_edges();
 }
 
@@ -179,6 +190,7 @@ int main(){
     test_remove_vertex0();
     test_remove_vertex1();
     test_remove_vertex2();
+    test_remove_vertex3();
 
     return 0;
 }
