@@ -7,8 +7,6 @@
 
 class Graph{
 
-
-
     public:    
     
         struct vertex{
@@ -22,6 +20,8 @@ class Graph{
         Graph()
             :_vertex_map(),_graph_size(0)
             {};
+
+        ~Graph(){};
 
         void add_vertex(double value);
         void add_edge(size_t id_1, size_t id_2);

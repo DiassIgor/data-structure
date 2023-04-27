@@ -39,10 +39,12 @@ void Graph::remove_edge(size_t id_1, size_t id_2){
 
 void Graph::remove_vertex(size_t id){
 
-    for (const size_t & connection : _vertex_map[id]->adj_list){
-        cout << connection << "~";
-        Graph::remove_edge(id, connection);
-    };
+    std::vector<size_t> & edges =  _vertex_map[id]->adj_list;
+    auto it = edges.begin();
+
+    while (it != edges.end()){
+      Graph::remove_edge(id, edges[0]); 
+    }
 
     delete _vertex_map[id];
     _vertex_map[id] = nullptr;
