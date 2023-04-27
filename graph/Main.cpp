@@ -164,13 +164,31 @@ void test_remove_vertex2(){
 void test_remove_vertex3(){
 
     Graph graph = standard_graph();
-    graph.show_edges();
     graph.remove_vertex(0);
 
     bool actual = graph.get_vertex_map().at(2)->adj_list.empty();
     bool expected = true;
     test_layout(actual, expected, "Remove_vertex3");
-    graph.show_edges();
+}
+
+void test_remove_vertex4(){
+
+    Graph graph = standard_graph();
+    graph.remove_vertex(1);
+
+    auto actual = graph.get_vertex_map().at(1);
+    auto expected = nullptr;
+    test_layout(actual, expected, "Remove_vertex4");
+}
+
+void test_remove_vertex5(){
+
+    Graph graph = standard_graph();
+    graph.remove_vertex(1);
+
+    size_t actual = graph.get_vertex_map().at(0)->adj_list.at(0);
+    size_t expected = 2;
+    test_layout(actual, expected, "Remove_vertex5");
 }
 
 int main(){
@@ -192,6 +210,8 @@ int main(){
     test_remove_vertex1();
     test_remove_vertex2();
     test_remove_vertex3();
+    test_remove_vertex4();
+    test_remove_vertex5();
 
     return 0;
 }
