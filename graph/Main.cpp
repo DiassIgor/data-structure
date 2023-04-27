@@ -1,9 +1,5 @@
 #include "graph.h"
-#include <cassert>
-#include <unordered_map>
-#include "../linked-list/linked-list.cpp"
-#include "../linked-list/linked-list.h"
-
+#include <string>
 
 Graph standard_graph(){
 
@@ -21,7 +17,7 @@ Graph standard_graph(){
     return graph;
 }
 
-void test_layout(auto actual, auto expected, string test_name){
+void test_layout(auto actual, auto expected, std::string test_name){
     if (actual == expected){
         std::cout << test_name << " -> PASSED!" << std::endl;
     }

@@ -1,6 +1,4 @@
 #include "graph.h"
-#include <iostream>
-#include <typeinfo>
 #include <algorithm>
 
 void Graph::add_vertex(double value){
@@ -51,15 +49,12 @@ void Graph::remove_vertex(size_t id){
     _graph_size -= 1;
 }
 
-
-
-
 void Graph::show_vertex(){
 
     for (auto pair: _vertex_map){
-        cout << pair.first << ": " << pair.second->value << "|";
+        std::cout << pair.first << ": " << pair.second->value << "|";
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 void Graph::show_edges(){
@@ -67,12 +62,12 @@ void Graph::show_edges(){
     for (auto pair: _vertex_map){
 
         if (pair.second != nullptr){
-            cout << "Vertex: " << pair.first << "---";
-            cout << "Edges: ";
+            std::cout << "Vertex: " << pair.first << "---";
+            std::cout << "Edges: ";
             for (auto edge: pair.second->adj_list){
-                cout << edge << "|";
+                std::cout << edge << "|";
             }
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
