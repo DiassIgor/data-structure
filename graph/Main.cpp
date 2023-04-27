@@ -164,6 +164,7 @@ void test_remove_vertex2(){
 void test_remove_vertex3(){
 
     Graph graph = standard_graph();
+    graph.show_edges();
     graph.remove_vertex(0);
 
     bool actual = graph.get_vertex_map().at(2)->adj_list.empty();
